@@ -50,6 +50,8 @@ public class User {
 		this.password = password;
 		this.confirmPassword = confirmPassword;
 	}
+	
+	public User() {}
 
 	public Long getId() {
 		return id;
