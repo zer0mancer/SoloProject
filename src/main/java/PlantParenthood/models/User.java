@@ -31,12 +31,12 @@ public class User {
 	private String email;
 	
 	@NotEmpty(message="Please enter a PASSWORD to continue")
-	@Size(min=8, max=22, message="Your password must be in between the values of 8-22")
+	@Size(min=6, max=66, message="Your password must be at least 6 characters")
 	private String password;
 	
 	@Transient
 	@NotEmpty(message="You must CONFIRM your password")
-	@Size(min=8, max=22, message="Password must be in between the values of 8-22")
+	@Size(min=8, max=22, message="Confirm Password does not match")
 	private String confirmPassword;
 	
 	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)

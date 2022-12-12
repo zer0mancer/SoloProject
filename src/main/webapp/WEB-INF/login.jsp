@@ -46,7 +46,7 @@
 					<form:input path="confirmPassword" type="password"/>
 				</p>
 			
-			
+				<button>Join us now!</button>
 			</form:form>
 		</div>
 		
@@ -66,7 +66,8 @@
 						<form:errors path="password"></form:errors>
 						<form:input path="password" type="password"/>
 					</p>
-				
+					
+					<button>Let's get Growing!</button>
 					
 					
 				</form:form>

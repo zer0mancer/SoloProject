@@ -1,12 +1,11 @@
 package PlantParenthood.services;
 
-import java.util.List;
-import java.util.Optional;
+
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 
 import PlantParenthood.models.Login;
 import PlantParenthood.models.User;
@@ -23,17 +22,13 @@ public class UserService {
 		this.userRepo = userRepo;
 	}
 	
-//	Grab all users
-	public List <User>allUsers(){
-		return userRepo.findAll();
-	}
 //	Grab one user (by id)
 	public User findUser(Long id) {
-		return this.userRepo.findById(id).get();
+		return userRepo.findById(id).orElse(null);
 	}
 	
 //	Grab user by Email
-	public Optional <User> findByEmail(String email){
+	public  User findByEmail(String email){
 		return userRepo.findByEmail(email);
 	}
 	
@@ -47,38 +42,90 @@ public class UserService {
 		this.userRepo.deleteById(id);
 	}
 	
-	public User register(User newUser, BindingResult results) {
-		
-		Optional <User> potentialUser = userRepo.findByEmail(newUser.getEmail());
-		if(potentialUser.isPresent()) {
-			results.rejectValue("email", "used", "Email is already in use!");
-			results.hasErrors();
-			
+//	public User register(User newUser, BindingResult results) {
+//		
+//		Optional <User> potentialUser = userRepo.findByEmail(newUser.getEmail());
+//		if(potentialUser.isPresent()) {
+//			results.rejectValue("email", "used", "Email is already in use!");
+//			results.hasErrors();
+//			
+//		}
+//		if(!newUser.getPassword().equals(newUser.getConfirmPassword())) {
+//			results.rejectValue("password", "mismatched", "Passwords don't match!");
+//			results.hasErrors();
+//			return null;
+//		}
+//		else {
+//			String safePW = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
+//			newUser.setPassword(safePW);
+//			return this.userRepo.save(newUser);
+//		}
+//			
+//	}
+
+//	Registering user and saving their password with Bcrypt salt.
+	public User register(User register) {
+		String safePass = BCrypt.hashpw(register.getPassword(), BCrypt.gensalt());
+		register.setPassword(safePass);
+		userRepo.save(register);
+		return null;
+	}  
+	
+//	Checking to see if password and confirm password match. Double Checking if email is in use.
+	public void preRegister(User newUser, Errors denied) {
+		if (!newUser.getPassword().equals(newUser.getConfirmPassword())) {
+			denied.rejectValue("password", "mismatched", "Your passwords don't match");
 		}
-		if(!newUser.getPassword().equals(newUser.getConfirmPassword())) {
-			results.rejectValue("password", "mismatched", "Passwords don't match!");
-			results.hasErrors();
-			return null;
+		if (userRepo.findByEmail(newUser.getEmail())!=null) {
+			denied.rejectValue("email", "taken","Email already in use with existing account");
 		}
-		else {
-			String safePW = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
-			newUser.setPassword(safePW);
-			return this.userRepo.save(newUser);
-		}
-			
 	}
 	
-	public User validate(Login newLogin, BindingResult errors) {
-		Optional <User> existingUser = userRepo.findByEmail(newLogin.getEmail());
-		if(existingUser.isEmpty()) {
-			errors.rejectValue("email", "missingEmail", "That Email was not found");
+//	public User validate(Login newLogin, BindingResult errors) {
+//		Optional <User> existingUser = userRepo.findByEmail(newLogin.getEmail());
+//		if(existingUser.isEmpty()) {
+//			errors.rejectValue("email", "missingEmail", "That Email was not found");
+//			
+//		}
+//		if (!BCrypt.checkpw(newLogin.getPassword(),existingUser.get().getPassword())) {
+//				errors.rejectValue("password", "mismatched", "Password is not the same as saved on database!");
+//				return null;
+//		}
+//			return existingUser.get();
+//		}
+	
+//	Checking to see if the typed in email exists. Crosschecking if the password for the email is correct.
+	public boolean login(Login newLogin, Errors denied) {
+		User existingUser = userRepo.findByEmail(newLogin.getEmail());
+		if(existingUser == null) {
+			denied.rejectValue("matches","There is no account for that email");
+				return false;
+		}
+		else {
+			if (!BCrypt.checkpw(newLogin.getPassword(), existingUser.getPassword())) {
+				denied.rejectValue("password", "matches", "Incorrect Password!");
+				return false;
+			}
+		}
+			return true;
+	}
+	
+//	Checking to see if email is matched with one on file. Checking that password is correct. 
+	public boolean verify(Login login, Errors denied) {
+		User findAccount = userRepo.findByEmail(login.getEmail());
+		if(findAccount == null) {
+			denied.rejectValue("email", "missingAccount", "Account does not exist matching that email");
+				return false;
+		}
+		else {
+			if(!BCrypt.checkpw(login.getPassword(), findAccount.getPassword())) {
+				denied.rejectValue("password", "matching", "Passwords do not match");
+					return false;
+			}
+		}
+			return true;
+	}
 			
-		}
-		if (!BCrypt.checkpw(newLogin.getPassword(),existingUser.get().getPassword())) {
-				errors.rejectValue("password", "mismatched", "Password is not the same as saved on database!");
-				return null;
-		}
-			return existingUser.get();
-		}
+				
 	
 }
