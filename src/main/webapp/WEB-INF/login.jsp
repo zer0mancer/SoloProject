@@ -49,6 +49,28 @@
 			
 			</form:form>
 		</div>
+		
+		<div>
+			<h3>Already a part of our Growing Community?</h3>
+			<h3>Welcome back, Log in here!</h3>
+				<form:form action="/login" modelAttribute="newLogin" method="post">
+				
+					<p>
+						<form:label path="email">Email:</form:label>
+						<form:errors path="email"></form:errors>
+						<form:input path="email" type="text"/>
+					</p>
+					
+					<p>
+						<form:label path="password">Password:</form:label>
+						<form:errors path="password"></form:errors>
+						<form:input path="password" type="password"/>
+					</p>
+				
+					
+					
+				</form:form>
+		</div>
 	</div>
 
 
