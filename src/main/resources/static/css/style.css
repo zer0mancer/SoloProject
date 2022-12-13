@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+
+*{
+	margin:0 auto;
+	padding: 0;
+}
+
+h1{
+	color:black;
+	font-weight: bolder;
+}
+
+.grow{
+		color:black;
+	font-weight: bolder;
+}
+
+
+
+.login{
+	background-image: url("https://jooinn.com/images/wild-flowers-52.jpg");
+	background-size:cover;	
+}
+
+body{
+	margin:auto;
+	padding-bottom:200px;
+}
