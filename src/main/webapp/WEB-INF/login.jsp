@@ -7,12 +7,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <title>Login &amp; Register</title>
 <!-- We have learned that while using the ampersand "&" that we MUST enclose it as such: "&amp;" -->
 </head>
 <body>
 
-<h1>This is your LOGIN PAGE!!!</h1>
+	<header class="hero center is-primary">
+		<div class="hero body">
+			<h1 class="title">Plant Parenthood</h1>
+		</div>
+		<p class="subtitle">We all Grow Together</p>
+	
+	</header>
 
 	<div>
 		<h1>Welcome Plant Parents!</h1>
@@ -20,7 +29,7 @@
 	</div>
 
 	<div>
-		<div>
+		<div class="box">
 			<h3>Are you a new parent?</h3>
 			<h3>Register Here!</h3>
 			<form:form action="/register" modelAttribute="newUser" method="post">
@@ -46,11 +55,11 @@
 					<form:input path="confirmPassword" type="password"/>
 				</p>
 			
-				<button>Join us now!</button>
+				<button class="button is-primary">Join us now!</button>
 			</form:form>
 		</div>
 		
-		<div>
+		<div class="box">
 			<h3>Already a part of our Growing Community?</h3>
 			<h3>Welcome back, Log in here!</h3>
 				<form:form action="/login" modelAttribute="newLogin" method="post">
@@ -67,7 +76,7 @@
 						<form:input path="password" type="password"/>
 					</p>
 					
-					<button>Let's get Growing!</button>
+					<button class="button is-success">Let's get Growing!</button>
 					
 					
 				</form:form>

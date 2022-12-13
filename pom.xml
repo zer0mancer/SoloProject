@@ -63,6 +63,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+        <dependency>
+    <groupId>org.webjars.bower</groupId>
+    <artifactId>bulma</artifactId>
+    <version>0.6.2</version>
+</dependency>
 	</dependencies>
 
 	<build>
