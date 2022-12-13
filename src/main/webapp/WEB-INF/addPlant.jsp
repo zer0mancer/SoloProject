@@ -24,11 +24,11 @@
 	
 	<div class="hero body is-align-items center">
 		<div class="is-align-items-center">
-			<h1 class="has-text-centered has-background-primary title is-4">Add your Plant!</h1>
+			<h1 class="has-text-centered has-background-primary title is-4 mt-6 p-4">Add your Plant!</h1>
 		</div>
 		
 		<div class="m-6">
-			<form:form class="box m-6" action="/plant/addPlant" method="post" modelAttribute="newPlant">
+			<form:form class="box m-6 pink" action="/plant/addPlant" method="post" modelAttribute="newPlant">
 				<div class="field">
 					<p>
 						<form:label class="label" path="name">Plant Name:</form:label>
@@ -81,7 +81,7 @@
 					<form:input path="user"  type="hidden" value="${loggedIn.id}"/>
 				</p>
 			
-				<p class="has-text-centered"><button class="button is-primary">Add your Plant</button></p>
+				<p class="has-text-centered"><button class="button is-primary p-5 " id="pink-text">Add your Plant</button></p>
 			</form:form>
 		</div>
 	

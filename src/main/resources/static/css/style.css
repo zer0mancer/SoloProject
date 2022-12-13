@@ -34,3 +34,12 @@ body{
 	margin:auto;
 	padding-bottom:200px;
 }
+
+.pink{
+	background-color:#FFB1B9;
+}
+
+#pink-text{
+	color:#FFB1E0;
+	font-weight:bold;
+}
