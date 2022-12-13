@@ -35,19 +35,6 @@ public class Plant {
 	@NotBlank(message="What, is your plant a Vampire plant?")
 	private String sunlight;
 
-	public Plant(Long id,
-			@NotBlank(message = "Please enter a Plant NAME") @Size(min = 3, max = 40, message = "Plant NAME must be between the values of 3-40") String name,
-			@NotBlank(message = "Please enter the COLOR of the plant") String color,
-			@NotBlank(message = "Please enter the Height to keep track of measurements") String height,
-			@NotBlank(message = "Soil cannot be empty, we need to know how much to water it!") String soil,
-			@NotBlank(message = "What, is your plant a Vampire plant?") String sunlight) {
-		this.id = id;
-		this.name = name;
-		this.color = color;
-		this.height = height;
-		this.soil = soil;
-		this.sunlight = sunlight;
-	}
 
 	public Long getId() {
 		return id;
