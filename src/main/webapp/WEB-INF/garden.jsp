@@ -37,14 +37,22 @@
 						<tr>
 							<td>${plant.user.username}</td>
 							<td>${plant.name}</td>
-							<td><a href="plant/info/${plant.id}">Additional Details</a>
-					
+							<td><a href="plant/info/${plant.id}">Additional Details</a></td>
+						</tr>
 					</c:forEach>
-				
 				</tbody>
 			</table>
-		
 		</div>
+		
+		<div>
+			<a href="/logout"><b>Sign Out</b></a>
+		</div>
+			
+			
+						
+					
+				
+		
 	
 
 	</div>

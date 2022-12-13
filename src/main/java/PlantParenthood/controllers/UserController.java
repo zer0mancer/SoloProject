@@ -71,6 +71,12 @@ public class UserController {
 			return "redirect:/plants/home";
 		
 	}
+	
+	@GetMapping("/logout")
+		public String logOff(HttpSession inSession) {
+			inSession.invalidate();
+			return "redirect:/"; 
+	}
 
 	
 	
