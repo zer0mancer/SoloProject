@@ -22,6 +22,14 @@ h1{
 	background-size:cover;	
 }
 
+#addPlant{
+	background-image: url("https://images.fineartamerica.com/images-medium-large-5/2-sunken-garden-como-conservatory-amanda-stadther.jpg");
+	background-size:cover;
+	padding-bottom:200px;
+}
+
+
+
 body{
 	margin:auto;
 	padding-bottom:200px;

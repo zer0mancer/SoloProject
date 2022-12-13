@@ -7,51 +7,73 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+      <link rel="stylesheet" href="/css/style.css"/>
+   
+
 <title>Add your plant here!</title>
 </head>
-<body>
-	<div>
-		<div>
-			<h1>Add your Plant!</h1>
+<body id="addPlant">
+
+	<header class="hero center is-primary">
+		<div class="">
+			<h1 class="title has-text-centered">Plant Parenthood</h1>
+		<p class="subtitle has-text-centered">We all Grow Together</p>
+		</div>
+	</header>
+	
+	<div class="hero body is-align-items center">
+		<div class="is-align-items-center">
+			<h1 class="has-text-centered has-background-primary title is-4">Add your Plant!</h1>
 		</div>
 		
-		<div>
-			<form:form action="/plant/addPlant" method="post" modelAttribute="newPlant">
-				<p>
-					<form:label path="name">Plant Name:</form:label>
-				</p>
-				<p>
-					<form:errors path="name"></form:errors>
-					<form:input path="name" type="text"/>
-				</p>
+		<div class="m-6">
+			<form:form class="box m-6" action="/plant/addPlant" method="post" modelAttribute="newPlant">
+				<div class="field">
 					<p>
-					<form:label path="color">Color of Plant:</form:label>
-				</p>
-				<p>
-					<form:errors path="color"></form:errors>
-					<form:input path="color" type="text"/>
-				</p>
+						<form:label class="label" path="name">Plant Name:</form:label>
+					</p>
 					<p>
-					<form:label path="height">Height of Plant:</form:label>
-				</p>
-				<p>
-					<form:errors path="height"></form:errors>
-					<form:input path="height" type="text"/>
-				</p>
+						<form:errors path="name"></form:errors>
+						<form:input class="input is-link" path="name" type="text"/>
+					</p>
+				</div>
+				<div class="field">
 					<p>
-					<form:label path="soil">Soil preference:</form:label>
-				</p>
-				<p>
-					<form:errors path="soil"></form:errors>
-					<form:input path="soil" type="text"/>
-				</p>
+						<form:label class="label" path="color">Color of Plant:</form:label>
+					</p>
 					<p>
-					<form:label path="sunlight">Sunlight:</form:label>
-				</p>
-				<p>
-					<form:errors path="sunlight"></form:errors>
-					<form:input path="sunlight" type="text"/>
-				</p>
+						<form:errors path="color"></form:errors>
+						<form:input class="input is-primary" path="color" type="text"/>
+					</p>
+				</div>
+				<div class="field">
+					<p>
+						<form:label class="label" path="height">Height of Plant:</form:label>
+					</p>
+					<p>
+						<form:errors path="height"></form:errors>
+						<form:input class="input is-primary" path="height" type="text"/>
+					</p>
+				</div>
+				<div class="field">
+					<p>
+						<form:label class="label" path="soil">Soil preference:</form:label>
+					</p>
+					<p>
+						<form:errors path="soil"></form:errors>
+						<form:input class="input is-primary" path="soil" type="text"/>
+					</p>
+				</div>
+				<div class="field">
+					<p>
+						<form:label  class="label" path="sunlight">Sunlight:</form:label>
+					</p>
+					<p>
+						<form:errors path="sunlight"></form:errors>
+						<form:input class="input is-warning" path="sunlight" type="text"/>
+					</p>
+				</div>
 				
 				
 				<p>
@@ -59,7 +81,7 @@
 					<form:input path="user"  type="hidden" value="${loggedIn.id}"/>
 				</p>
 			
-				<p><button>Add your Plant</button></p>
+				<p class="has-text-centered"><button class="button is-primary">Add your Plant</button></p>
 			</form:form>
 		</div>
 	
