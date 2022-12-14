@@ -56,7 +56,7 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>User:</th>
+						<th>Parent:</th>
 						<th>Plant type:</th>
 						<th>Navigate:</th>
 					</tr>

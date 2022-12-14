@@ -87,6 +87,17 @@
 			
 				<p class="has-text-centered"><button class="button is-primary p-5 " id="pink-text">Add your Plant</button></p>
 			</form:form>
+			<p class="has-text-centered">
+				<a class="button is-warning is-rounded has-text-danger" href="/homepage">
+					<span class="material-symbols-outlined mr-2">
+							local_florist
+					</span>
+					Cancel
+					<span>
+						<i class="fa fa-leaf ml-2"></i>
+					</span>
+				</a>
+			</p>
 		</div>
 	
 			<p class="has-text-centered mt-6">

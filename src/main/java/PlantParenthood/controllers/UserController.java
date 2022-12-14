@@ -67,7 +67,7 @@ public class UserController {
 		}
 		
 		userService.register(newUser);
-		inSession.setAttribute("loggedIn", newUser.getId());
+		inSession.setAttribute("loggedIn", newUser);
 			return "redirect:/homepage";
 		
 	}
