@@ -54,3 +54,11 @@ body{
 	border: 2px black solid;
 	border-radius:76%;
 }
+
+.table-head{
+	background-color:#FFB1B7;
+	padding: 10px 25px 10px 25px;
+	margin: 0px 400px 0px 400px;
+}
+
+
