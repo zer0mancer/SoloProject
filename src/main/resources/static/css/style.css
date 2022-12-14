@@ -33,6 +33,13 @@ h1{
 	background-size:cover;
 }
 
+.main{
+	background-image:url("https://www.chatelaine.com/wp-content/uploads/2019/01/easy-house-plants-GROUPSHOT1-e1548862879845.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	
+}
 
 
 body{
@@ -61,4 +68,8 @@ body{
 	margin: 0px 400px 0px 400px;
 }
 
+
+table{
+	border: 1px black solid;
+}
 
