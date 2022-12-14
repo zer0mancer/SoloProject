@@ -28,6 +28,11 @@ h1{
 	padding-bottom:200px;
 }
 
+.details{
+	background-image: url("https://media.timeout.com/images/100442633/image.jpg");
+	background-size:cover;
+}
+
 
 
 body{
@@ -42,4 +47,10 @@ body{
 #pink-text{
 	color:#FFB1E0;
 	font-weight:bold;
+}
+
+#info-card{
+	margin:17px 500px 0px 500px;
+	border: 2px black solid;
+	border-radius:76%;
 }
