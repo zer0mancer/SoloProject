@@ -77,6 +77,15 @@
 			
 	</div>
 	
+				<p class="has-text-centered mt-6">
+					<a class="button is-outlined" href="/logout">
+						<b>
+						<span class="material-symbols-outlined pr-2">hiking</span>
+							Sign Out
+						<span class="material-symbols-outlined pl-2">door_open</span>
+						</b>
+					</a>
+				</p>
 	
 
 </body>

@@ -33,7 +33,7 @@
 
 
 	<div class="container">
-		<div class="columns mt-6 row center" id="center">
+		<div class="columns mt-6" id="center">
 	
 			<div class="box is-4 column ">
 				<div class="is-size-5 has-text-centered">

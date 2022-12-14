@@ -9,6 +9,10 @@
 <meta charset="ISO-8859-1">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
       <link rel="stylesheet" href="/css/style.css"/>
+      <link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
 
 <title>Add your plant here!</title>
@@ -85,7 +89,15 @@
 			</form:form>
 		</div>
 	
-	
+			<p class="has-text-centered mt-6">
+				<a class="button is-outlined" href="/logout">
+					<b>
+					<span class="material-symbols-outlined pr-2">hiking</span>
+						Sign Out
+					<span class="material-symbols-outlined pl-2">door_open</span>
+					</b>
+				</a>
+			</p>
 	
 	
 	</div>

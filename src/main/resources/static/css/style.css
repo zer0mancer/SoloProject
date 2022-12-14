@@ -15,7 +15,13 @@ h1{
 	font-weight: bolder;
 }
 
-
+#upgrade-fields{
+	background-image: url("https://images2.alphacoders.com/699/699337.jpg");
+	background-size: cover;
+	background-position: bottom;
+	
+	
+}
 
 .login{
 	background-image: url("https://jooinn.com/images/wild-flowers-52.jpg");
@@ -26,6 +32,11 @@ h1{
 	background-image: url("https://images.fineartamerica.com/images-medium-large-5/2-sunken-garden-como-conservatory-amanda-stadther.jpg");
 	background-size:cover;
 	padding-bottom:200px;
+}
+
+#resoil{
+	background-image:url("https://wallsdesk.com/wp-content/uploads/2017/01/Flower-Fields-Wallpapers-HQ.jpg");
+	background-size:cover;
 }
 
 .details{
